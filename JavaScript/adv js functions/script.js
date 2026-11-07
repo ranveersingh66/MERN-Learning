@@ -14,5 +14,3 @@ greeting()
 const multiply = () => q*w;
 multiply(12, 2)
 
-
-
