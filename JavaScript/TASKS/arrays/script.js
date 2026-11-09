@@ -42,4 +42,15 @@ const doubledEvens = evenNumbers.map(num => num * 2);
 
 // Output the final result to the console
 console.log(doubledEvens); 
-// Output: [4, 8, 12, 16, 20]
+
+//  Capitalize a List of Names
+const names = ["alex", "samantha", "rob", "rachel", "ed"];
+
+// 1. Capitalize the first letter of each name
+const capitalized = names.map(name => name.charAt(0).toUpperCase() + name.slice(1));
+
+// 2. Filter out names shorter than 5 characters
+const longNames = capitalized.filter(name => name.length >= 5);
+
+console.log(longNames); 
+// Output: [ 'Samantha', 'Rachel' ]
