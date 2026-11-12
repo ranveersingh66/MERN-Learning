@@ -43,6 +43,7 @@ const doubledEvens = evenNumbers.map(num => num * 2);
 // Output the final result to the console
 console.log(doubledEvens); 
 
+
 //  Capitalize a List of Names
 const names = ["alex", "samantha", "rob", "rachel", "ed"];
 
