@@ -19,7 +19,10 @@ console.log(arr);  // Output: [3, 4, 5, 6, 7]
 // Filter method creates a new array with all elements that pass the test implemented by the provided function
 
 const evenNum = newArray.filter((data) => data % 2 === 0); // Filters out even numbers from the array
-console.log(evenNum); // Output: [2, 4]
+console.log("evenNum:", evenNum); // Output: [2, 4]
 
+// Find Method
+// Find method returns the value of the first element in the array that satisfies the provided testing function
 
-
+const findNum = newArray.find((data) => data == 2); // Finds the first element in the array that is equal to 2
+console.log("findNum:", findNum); // Output: 2 
