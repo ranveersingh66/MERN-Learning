@@ -59,3 +59,4 @@ const totalPrice = cartItems.reduce((accumulator, currentItem) => {
   return accumulator + (currentItem.price * currentItem.quantity) // Calculates the total price of all items in the cart by multiplying the price of each item by its quantity and adding it to the accumulator 
 }, 0)
 console.log("totalPrice:", totalPrice); // Output: 230
+
