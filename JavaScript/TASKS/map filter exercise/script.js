@@ -1,75 +1,50 @@
-function StudentCard(cardId, student) {
-  const card = document.getElementById(cardId);
+const students = [
+  { name: "Salmaan Ahmed", marks: "38%", className: "3rd", address: "India" },
+  { name: "Ranveer Singh", marks: "21%", className: "4th", address: "India" },
+  { name: "Priya Sharma", marks: "20%", className: "5th", address: "India" },
+  { name: "Shalini Singh", marks: "40%", className: "5th", address: "India" },
+  { name: "Shriya Verma", marks: "45%", className: "6th", address: "India" },
+  { name: "Rohit Sharma", marks: "50%", className: "6th", address: "India" },
+  { name: "Rohini", marks: "80%", className: "6th", address: "India" },
+  { name: "Riya", marks: "90%", className: "8th", address: "India" },
+  { name: "Harsh Shukla", marks: "87%", className: "8th", address: "India" }
+];
 
-  card.innerHTML = `
-    <ul>
-      Name: ${student.StudentName}<br>
-      Marks: ${student.Marks}<br>
-      Class: ${student.Class}<br>
-      Address: ${student.Address}
-    </ul>
-  `;
+const cardsContainer = document.getElementById("student-cards");
+const searchForm = document.querySelector("form");
+const searchInput = document.querySelector('input[name="q"]');
+
+function renderStudents(studentList) {
+  cardsContainer.replaceChildren(
+    ...studentList.map((student) => {
+      const card = document.createElement("article");
+      card.className = "card";
+
+      card.innerHTML = `
+        <p><span>Name:</span> ${student.name}</p>
+        <p><span>Marks:</span> ${student.marks}</p>
+        <p><span>Class:</span> ${student.className}</p>
+        <p><span>Address:</span> ${student.address}</p>
+      `;
+
+      return card;
+    })
+  );
 }
 
-StudentCard("card-1", {
-  StudentName: "Salmaan Ahmed",
-  Marks: "38%",
-  Class: "3rd",
-  Address: "India"
+function filterStudents() {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  const matchingStudents = students.filter((student) =>
+    student.name.toLowerCase().includes(searchTerm)
+  );
+
+  renderStudents(matchingStudents);
+}
+
+searchInput.addEventListener("input", filterStudents);
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  filterStudents();
 });
 
-StudentCard("card-2", {
-  StudentName: "Ranveer Singh",
-  Marks: "21%",
-  Class: "4th",
-  Address: "India"
-});
-
-StudentCard("card-3", {
-  StudentName: "Priya Sharma",
-  Marks: "20%",
-  Class: "5th",
-  Address: "India"
-});
-
-StudentCard("card-4", {
-  StudentName: "Shalini Singh",
-  Marks: "40%",
-  Class: "5th",
-  Address: "India"
-})
-
-StudentCard("card-5", {
-  StudentName: "Shriya verma",
-  Marks: "45%",
-  Class: "6th",
-  Address: "India"
-})
-
-StudentCard("card-6", {
-  StudentName: "Rohit Sharma",
-  Marks: "50%",
-  Class: "6th",
-  Address: "India"
-})
-
-StudentCard("card-7", {
-  StudentName: "rohini",
-  Marks: "80%",
-  Class: "6th",
-  Address: "India"
-})
-
-StudentCard("card-8", {
-  StudentName: "Riya ",
-  Marks: "90%",
-  Class: "8th",
-  Address: "India"
-})
-
-StudentCard("card-9", {
-  StudentName: "Harsh shukla",
-  Marks: "87%",
-  Class: "8th",
-  Address: "India"
-})
+renderStudents(students);
