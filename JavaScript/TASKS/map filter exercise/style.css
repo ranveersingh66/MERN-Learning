@@ -1,0 +1,148 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #3d4248;
+}
+
+.page-header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 38px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.page-header p {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.login-button {
+  width: 106px;
+  height: 40px;
+  border: 0;
+  border-radius: 22px;
+  background-color: #eaf2ff;
+  color: #5685d8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.searchbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  max-width: 807px;
+  height: 78px;
+  margin: 22px auto 18px;
+  padding: 16px;
+  border: 1px solid #e8e8e8;
+  border-radius: 15px;
+  background-color: #ffffff;
+  margin-bottom: 70px;
+}
+
+.searchbar form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-input {
+  position: relative;
+  width: 233px;
+}
+
+.searchbar input {
+  width: 100%;
+  height: 44px;
+  padding: 0 38px 0 17px;
+  border: 1px solid #e8ebec;
+  border-radius: 12px;
+  outline: none;
+  background-color: #f5f7f7;
+  color: #53585d;
+  font-size: 12px;
+}
+
+.searchbar input::placeholder {
+  color: #a7adb1;
+}
+
+.search-input svg {
+  position: absolute;
+  top: 14px;
+  right: 17px;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #727a80;
+  stroke-linecap: round;
+  stroke-width: 2;
+}
+
+.searchbar button {
+  width: 100px;
+  height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background-color: #7025dc;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 807px;
+  margin: 0 auto;
+}
+
+.card {
+  min-height: 260px;
+  padding: 20px 24px;
+  border-radius: 10px;
+  background-color: #f4f4f6;
+}
+
+.card p {
+  margin-bottom: 12px;
+  color: #222222;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+.card span {
+  margin-right: 4px;
+  color: #777777;
+  font-weight: 400;
+}
+
+@media (max-width: 650px) {
+  .page-header {
+    padding: 0 20px;
+  }
+
+  .searchbar {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .card-grid {
+    grid-template-columns: 10fr;
+    margin: 100px 20px;
+  }
+}
